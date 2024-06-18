@@ -45,8 +45,24 @@ ax1 = fig.add_subplot([0.05, 0.1, 0.4, 0.35])
 ax2 = fig.add_subplot([0.05, 0.6, 0.4, 0.35])
 ax3 = fig.add_subplot([0.55, 0.1, 0.4, 0.75])
 
-ax1.bar(df.columns, df.mean())
-ax2.bar(df.columns, df.min())
-ax3.bar(df.columns, df.max())
+# Bar plot for mean values
+ax1.bar(df.columns, df.mean(), color='skyblue', edgecolor='black')
+ax1.set_title('Average Values')
+ax1.set_ylabel('Mean')
+ax1.grid(axis='y', linestyle='--', alpha=0.7)
 
+# Bar plot for minimum values
+ax2.bar(df.columns, df.min(), color='lightgreen', edgecolor='black')
+ax2.set_title('Minimum Values')
+ax2.set_ylabel('Min')
+ax2.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Bar plot for maximum values
+ax3.bar(df.columns, df.max(), color='salmon', edgecolor='black')
+ax3.set_title('Maximum Values')
+ax3.set_ylabel('Max')
+ax3.grid(axis='y', linestyle='--', alpha=0.7)
+
+# General plot styling
+plt.tight_layout()
 plt.show()
