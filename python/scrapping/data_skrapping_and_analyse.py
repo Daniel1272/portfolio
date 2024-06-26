@@ -3,17 +3,21 @@ import bs4
 import pandas as pd
 import matplotlib.pyplot as plt
 
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
-                         ' Chrome/91.0.4472.124 Safari/537.36'}
-
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+    'Referer': 'https://www.ebay.co.uk/',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate, br'
+}
 # Scrapping iphone sales datas from ebay
-GB_list = [[256, 'GB'], [512, 'GB'], [1, 'TB']]
+GB_list = [['256', 'GB'], [512, 'GB'], [1, 'TB']]
 prices_dict = {}
 for gb in GB_list:
-    response = requests.get('https://www.ebay.co.uk/sch/i.html?_from=R40&_nkw=iphone+15+pro+max+&_'
-                            'sacat=9355&Brand=Apple&_udlo=600&Model=Apple%2520iPhone%252015%2520Pro%252'
-                            '0Max&LH_PrefLoc=1&_ipg=240&LH_Complete=1&LH_Sold=1&LH_ItemCondition=1000&r'
-                            f't=nc&Storage%2520Capacity={gb[0]}%2520{gb[1]}&_dcat=9355', headers=headers)
+    response = requests.get('https://www.ebay.co.uk/sch/i.html?_from=R40&_nkw=iphone+15+pro+max&_'
+                            'sacat=0&_oaa=1&Model=Apple%2520iPhone%252015%2520Pro%2520Max&LH_Sold=1&LH_'
+                            f'Complete=1&_udlo=600&rt=nc&Storage%2520Capacity={gb[0]}%2520{gb[1]}&_dcat=9355', headers=headers)
+
+
 
     print(f'Connection status:{response.status_code}')
 
