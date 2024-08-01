@@ -10,7 +10,7 @@ headers = {
     'Accept-Encoding': 'gzip, deflate, br'
 }
 # Scrapping iphone sales datas from ebay
-GB_list = [['256', 'GB'], [512, 'GB'], [1, 'TB']]
+GB_list = [[256, 'GB'], [512, 'GB'], [1, 'TB']]
 prices_dict = {}
 for gb in GB_list:
     response = requests.get('https://www.ebay.co.uk/sch/i.html?_from=R40&_nkw=iphone+15+pro+max&_'

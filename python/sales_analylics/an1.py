@@ -22,7 +22,7 @@ formatted = country_sales[' Sales'].apply(lambda x: f'{x:,.0f}')
 print('Total sales per country')
 print(formatted)
 
-
+# Plotting the pie charts for units sold and sales per country
 fig,[ax1,ax2] = plt.subplots(1,2,figsize=(14,7))
 ax1:plt.Axes
 ax1.pie(country_units['Units Sold'],labels=country_units.index,autopct='%1.2f%%' )
@@ -46,7 +46,7 @@ products_profit = df[['Product', 'Profit']].groupby('Product').sum()
 print('Total profit made')
 print(products_profit)
 
-
+# Plotting bar charts for units sold, manufacturing price, and profit per product
 fig = plt.figure(figsize=(14, 7))
 ax1 = fig.add_subplot([0.05,0.1,0.4,0.35])
 ax2 = fig.add_subplot([0.05,0.6,0.4,0.35])
@@ -71,6 +71,7 @@ df = df[['Product','Units Sold','Month Name']][df['Year']==2014]
 fig,axes = plt.subplots(2,3,figsize=(14, 7))
 ax1,ax2,ax3,ax4,ax5,ax6 = axes.flatten()
 
+# Preparing data for each product
 Velo = df[['Units Sold','Month Name']][df['Product']=='Velo'].groupby('Month Name').sum('Units Sold')
 Amarilla = df[['Units Sold','Month Name']][df['Product']=='Amarilla'].groupby('Month Name').sum('Units Sold')
 Carretera = df[['Units Sold','Month Name']][df['Product']=='Carretera'].groupby('Month Name').sum('Units Sold')
@@ -78,6 +79,7 @@ Montana = df[['Units Sold','Month Name']][df['Product']=='Montana'].groupby('Mon
 Paseo = df[['Units Sold','Month Name']][df['Product']=='Paseo'].groupby('Month Name').sum('Units Sold')
 VTT = df[['Units Sold','Month Name']][df['Product']=='VTT'].groupby('Month Name').sum('Units Sold')
 
+# Creating plots for each product to check seasonality
 datasets = [Velo, Amarilla, Carretera, Montana, Paseo, VTT]
 names = ['Velo', 'Amarilla', 'Carretera', 'Montana', 'Paseo', 'VTT']
 for ax, data, name in zip(axes.flatten(), datasets, names):
