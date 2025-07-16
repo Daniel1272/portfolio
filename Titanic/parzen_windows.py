@@ -3,8 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 import numpy as np
-import pandas as pd
-from preprocessing import X,y
+from preprocessing import X, y
 
 np.random.seed(0)
 
