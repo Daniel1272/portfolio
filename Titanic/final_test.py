@@ -84,5 +84,5 @@ total_res = meta_model.predict(meta_features)
 res = pd.concat([df['PassengerId'],pd.Series(total_res)],axis=1)
 res = res.rename(columns={0:'Survived'})
 
-res.to_csv('submission8.csv',index=False)
+res.to_csv('submission.csv',index=False)
 
