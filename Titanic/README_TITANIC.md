@@ -53,7 +53,7 @@ Two ensemble techniques were explored:
 ### 2. Meta-Model (Stacking)
 - Model predictions are used as features for an XGBoost meta-classifier.
 - After correcting label issues, it achieved similar performance.
-- **Kaggle score:** ~0.777
+- **Kaggle score:** ~0.78
 
 ---
 
@@ -79,8 +79,8 @@ pip install -r requirements.txt
 
 | Method              | Kaggle Public Score |
 |---------------------|---------------------|
-| Weighted Ensemble   | 0.78468             |
-| Meta-Model (Stack)  | 0.77751             |
+| Weighted Ensemble   | 0.78229             |
+| Meta-Model (Stack)  | 0.77990             |
 
 ---
 
