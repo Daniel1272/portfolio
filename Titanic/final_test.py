@@ -66,7 +66,7 @@ xgb_res = np.where(xgb_clf.predict(X)==0,-1,1) * xgb_score
 
 
 
-
+"""
 total_res = ada_res+SVM_res+parzen_res+begging_res+gradient_boost+KNN_res+gaus_res+xgb_res
 
 total_res = np.sign(total_res)
@@ -78,8 +78,8 @@ meta_features = np.column_stack([np.sign(np.array([(alg.predict(X)*alpha) for al
             begging_model.predict(X), np.sign(np.array([tree.predict(X) for tree in  trees]).sum(axis=0)),
             KNN_model.predict(X_scaled), gaus_model.predict(X), np.where(xgb_clf.predict(X)==0,-1,1)])
 
-total_res = np.where(meta_model.predict(meta_features)==0,-1,1)
-"""
+total_res = meta_model.predict(meta_features)
+
 
 res = pd.concat([df['PassengerId'],pd.Series(total_res)],axis=1)
 res = res.rename(columns={0:'Survived'})

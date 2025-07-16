@@ -43,7 +43,7 @@ param_grid = {
     'colsample_bytree': [0.8, 1.0]
 }
 
-xgb = XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42)
+xgb = XGBClassifier(use_label_encoder=False, eval_metric='logloss')
 
 grid_search = GridSearchCV(
     estimator=xgb,
