@@ -5,20 +5,23 @@ This project solves the Titanic Kaggle competition using a wide range of machine
 ---
 
 ## 📦 Project Structure
-
 Titanic/
-├── preprocessing.py # Feature engineering and preprocessing
-├── titanic_adaboost_dinamic.py # Custom AdaBoost implementation
-├── titanic_SVM.py # SVM classifier with scaling
-├── parzen_windows.py # Parzen Window classifier (non-parametric density estimation)
-├── begging.py # Bagging classifier
-├── titanic_gradient_boost.py # Custom Gradient Boosting model
-├── titanic_KNN.py # k-Nearest Neighbors model
-├── gaussian.py # Gaussian Naive Bayes model
-├── xgboost_titanic.py # XGBoost classifier
-├── meta_model.py # Meta-model (stacking using XGBoost)
-├── submission_generator.py # Generates final Kaggle submission
-└── README.md # This file
+├── preprocessing.py               # Data preprocessing and feature engineering
+├── titanic_adaboost_dinamic.py   # Custom AdaBoost implementation
+├── titanic_SVM.py                # SVM model with scaling
+├── parzen_windows.py             # Parzen Windows classifier
+├── begging.py                    # Bagging classifier
+├── titanic_gradient_boost.py     # Custom Gradient Boost model
+├── titanic_KNN.py                # KNN model
+├── gaussian.py                   # Gaussian Naive Bayes
+├── xgboost_titanic.py            # XGBoost model
+├── meta_model.py                 # Meta-model (stacking with XGBoost)
+├── submission_generator.py       # Generates final submission
+├── test.csv                      # Test dataset (Kaggle)
+├── train.csv                     # Training dataset (Kaggle)
+├── submission.csv                # Submission output
+└── README.md                     # Project documentation
+
 
 
 
