@@ -4,7 +4,9 @@ This project solves the Titanic Kaggle competition using a wide range of machine
 
 ---
 
-## 📦 Project Structure
+### 📦 Project Structure
+
+```plaintext
 Titanic/
 ├── preprocessing.py               # Data preprocessing and feature engineering
 ├── titanic_adaboost_dinamic.py   # Custom AdaBoost implementation
@@ -21,9 +23,7 @@ Titanic/
 ├── train.csv                     # Training dataset (Kaggle)
 ├── submission.csv                # Submission output
 └── README.md                     # Project documentation
-
-
-
+```
 
 ---
 
