@@ -1,10 +1,8 @@
 import numpy as np
-import pandas as pd
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-from preprocessing import X,y
-
+from preprocessing import X, y
 
 
 np.random.seed(0)
@@ -23,7 +21,7 @@ for i in range(T):
 
     # Fit regression tree to the gradient
     tree = DecisionTreeRegressor(max_depth=3)
-    tree.fit(x_train,gradient)
+    tree.fit(x_train, gradient)
 
     # Update model prediction
     predict = tree.predict(x_train)
@@ -43,4 +41,3 @@ y_pred = np.sign(F_test)
 
 # Calculate accuracy of the gradient boosting model
 GD_score = accuracy_score(y_test, y_pred)
-
