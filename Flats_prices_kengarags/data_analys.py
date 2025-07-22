@@ -89,7 +89,7 @@ ax4.plot(filtered['square_meters'], prediction, color='red')
 
 
 plt.tight_layout()
-plt.savefig('flats_prices_analysis.png')
+plt.savefig('flats_prices_analysis.png',dpi=300)
 
 
 
