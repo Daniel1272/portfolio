@@ -15,7 +15,7 @@ df['year_month'] = df['created_at'].dt.to_period('M')
 
 
 
-fig,axes = plt.subplots(2,2)
+fig,axes = plt.subplots(2,2, figsize=(12, 8))
 ax1,ax2,ax3,ax4 = axes.flatten()
 # how prices per square meters have changed
 grouped = df.groupby(['rooms','year_month']).mean(numeric_only=True)
@@ -87,7 +87,7 @@ ax4.plot(filtered['square_meters'], prediction, color='red')
 
 
 plt.tight_layout()
-plt.show()
+plt.savefig('flats_price_analysis.png',dpi=300)
 
 
 
