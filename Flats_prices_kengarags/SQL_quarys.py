@@ -1,8 +1,8 @@
 import psycopg2
 
 # Database connection details
-DATABASE_USER = 'postgres'
-DATABASE_PASSWORD = 'd43855792d'
+DATABASE_USER = 'your_username'
+DATABASE_PASSWORD = 'your_password'
 DATABASE_HOST = 'localhost'
 DATABASE_PORT = '5432'
 DATABASE_NAME = 'flats_prices_riga'

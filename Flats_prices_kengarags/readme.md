@@ -1,53 +1,80 @@
-# Анализ цен на квартиры в Кенгарагсе (Рига, Латвия)
+# Flats Prices in Kengarags (Riga)
 
-Этот проект представляет собой исследование рынка недвижимости в районе **Кенгарагс** города **Рига**, с фокусом на цены квартир. Используется Python и библиотеки для анализа и визуализации данных.
+This project collects, stores, and analyzes apartment prices in Kengarags, using data from the [ss.lv](https://www.ss.lv) archive.
 
-## 📁 Структура проекта
+---
 
-Flats_prices_kengarags/
-├── data/ # Исходные CSV/Excel файлы с объявлениями
-├── notebooks/ # Jupyter ноутбуки с анализом
-├── visuals/ # Графики и диаграммы
-├── flats_analysis.py # Скрипт с основным кодом
-└── README.md # Этот файл
+## 📦 Project Structure
 
+| File                   | Description |
+|------------------------|-------------|
+| `database_criation.sql`| SQL query to create the `kengarags_prices` table |
+| `SQL_quarys.py`        | PostgreSQL connection and `add_to_database()` function |
+| `data_extraction.py`   | Scraping apartment ads from ss.lv and inserting into DB |
+| `data_analys.py`       | Price analysis and visualization (charts, simple ML model) |
+| `requirements.txt`     | List of dependencies |
+| `README.md`            | Project documentation |
 
-## 🛠 Используемые технологии
+---
 
-- Python 3.8+
-- pandas
-- matplotlib / seaborn
-- Jupyter Notebook
-- numpy
-- (по желанию) geopandas / folium — для отображения квартир на карте
+## ⚙️ Installation
 
-## 🚀 Быстрый старт
+1. Clone the repository:
 
-1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/Daniel1272/portfolio.git
-   cd portfolio/Flats_prices_kengarags
-Установите зависимости:
+```bash
+git clone https://github.com/Daniel1272/portfolio.git
+cd portfolio/Flats_prices_kengarags
+Install dependencies:
 pip install -r requirements.txt
-Запустите анализ:
-Через flats_analysis.py, или
-Откройте и выполните ячейки в Jupyter ноутбуке в папке notebooks/.
-🎯 Цели проекта
+🗃️ Database Setup
 
-Собрать и очистить данные по квартирам в Кенгарагсе
-Проанализировать средние цены в зависимости от:
-улицы
-количества комнат
-площади квартиры
-состояния квартиры
-Построить визуализации (гистограммы, boxplot, карта)
-📊 Пример графика
+Create a PostgreSQL database named flats_prices_riga, then execute the SQL query from database_criation.sql:
 
-📌 Источники данных
+CREATE TABLE kengarags_prices (
+    id SERIAL PRIMARY KEY,
+    address TEXT,
+    rooms INTEGER,
+    square_meters INTEGER,
+    floor_ INTEGER,
+    total_floors INTEGER,
+    project TEXT,
+    type_ TEXT,
+    price INTEGER,
+    price_per_m2 REAL,
+    created_at DATE
+);
+🔐 Database Connection Configuration
 
-cityreal.lv
-ss.lv
-Ручной сбор (парсинг) или экспорт из сайтов
-🧑‍💻 Автор
+Open SQL_quarys.py and replace the connection parameters with your own:
+
+DATABASE_USER = 'your_username'
+DATABASE_PASSWORD = 'your_password'
+DATABASE_HOST = 'localhost'
+DATABASE_PORT = '5432'
+DATABASE_NAME = 'flats_prices_riga'
+🚀 How to Run
+
+Data extraction:
+python data_extraction.py
+Data analysis and visualization:
+python data_analys.py
+After running data_analys.py, you will see 4 plots:
+
+Average price per m² by number of rooms over time
+Average price per m² by project over time
+Price per m² by floor
+Price vs area with linear regression line
+📊 Libraries Used
+
+psycopg2
+numpy
+pandas
+requests
+beautifulsoup4
+lxml
+matplotlib
+scikit-learn
+📌 Author
 
 Daniel1272
+

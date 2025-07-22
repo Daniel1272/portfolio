@@ -1,0 +1,8 @@
+psycopg2
+numpy
+pandas
+requests
+beautifulsoup4
+lxml
+matplotlib
+scikit-learn
