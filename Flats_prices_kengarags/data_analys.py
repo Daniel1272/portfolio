@@ -30,6 +30,7 @@ for room in sorted(grouped['rooms'].unique()):
 ax1.set_xlabel('Month')
 ax1.set_ylabel('Price per m²')
 ax1.set_title('Average Price per m² by Rooms and Month')
+ax1.tick_params(axis='x', rotation=45)
 ax1.legend()
 ax1.grid(True)
 
@@ -54,6 +55,7 @@ for project in sorted(filtered['project'].unique()):
 ax2.set_xlabel('Month')
 ax2.set_ylabel('Price per m²')
 ax2.set_title('Average Price per m² by Project and Month')
+ax2.tick_params(axis='x', rotation=45)
 ax2.legend()
 ax2.grid(True)
 
