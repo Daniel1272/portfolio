@@ -27,6 +27,10 @@ This project covers the complete pipeline for the Titanic survival prediction ch
 
 ### 3. Python Folder — Various Subprojects
 
+**SOS_report:**
+
+This project was a test assesment for a job interview. The code performs an analysis of key volunteer call metrics from an Excel dataset and automatically generates a detailed report in Word format, including visualizations such as bar charts and pie charts.
+
 **Google Maps Scraping:**  
 - `database.py` — database connection setup  
 - `google_scrapper_3.py` — scrapes data about logistics companies  
