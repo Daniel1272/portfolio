@@ -13,7 +13,7 @@ This project covers the complete pipeline for the Titanic survival prediction ch
 - Feature engineering and selection  
 - Training and evaluating machine learning models (logistic regression, random forest, etc.)  
 - Model validation and hyperparameter tuning  
-
+- [Detailed project description](./Titanic/README_TITANIC.md) 
 ---
 
 ### 2. Flats Prices in Kengarags (Riga)
@@ -22,7 +22,7 @@ This project covers the complete pipeline for the Titanic survival prediction ch
 - Stores data in PostgreSQL database  
 - Analyzes price trends over time, by number of rooms, project, and floor  
 - Visualizations and simple regression models  
-
+- [Detailed project description](./Flats_prices_kengarags/readme.md) 
 ---
 
 ### 3. Python Folder — Various Subprojects
